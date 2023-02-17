@@ -1,5 +1,7 @@
 package com.nomaan.dsa.linkedList;
 
+import javax.print.DocFlavor;
+
 public class LinkedList<X> {
 
     private int size;
@@ -12,6 +14,11 @@ public class LinkedList<X> {
         Node(X _val) {
             val = _val;
             next = null;
+        }
+
+        @Override
+        public String toString() {
+            return val.toString();
         }
     }
 
@@ -84,5 +91,25 @@ public class LinkedList<X> {
 
     public int size() {
         return size;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+        if (isEmpty()) {
+            sb.append("]");
+            return sb.toString();
+        }
+
+        Node<X> temp = head;
+
+        while (temp.next != null) {
+            sb.append(temp.val).append(",");
+            temp = temp.next;
+        }
+
+        sb.append(temp.val).append("]");
+        return sb.toString();
     }
 }
