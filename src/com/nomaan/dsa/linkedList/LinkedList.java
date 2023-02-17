@@ -20,15 +20,19 @@ public class LinkedList<X> {
         }
     }
 
+    // Constructor for the LinkedList class
     public LinkedList() {
         head = null;
         tail = null;
+        size = 0;
     }
 
+    // isEmpty will return if the linked List is empty or not
     public boolean isEmpty() {
         return head == null;
     }
 
+    // add method will add the element at the tail of the linkedList
     public boolean add(X val) {
         if (!isEmpty())
             if (head.val.getClass() != val.getClass()) return false;
@@ -50,6 +54,7 @@ public class LinkedList<X> {
 
         Node<X> ele = new Node<>(val);
 
+        // If list is empty then we have no other choice to add element at starting
         if (isEmpty()) {
             head = ele;
             tail = ele;
@@ -58,6 +63,7 @@ public class LinkedList<X> {
             return true;
         }
 
+        // if position == 0 then we are trying to add element at the start of linkedList
         if (pos == 0) {
             ele.next = head;
             head = ele;
@@ -66,6 +72,7 @@ public class LinkedList<X> {
             return true;
         }
 
+        // Traversing to insert at specified position
         {
             Node<X> temp = head;
             while (temp != null && --pos > 0) temp = temp.next;
@@ -84,13 +91,16 @@ public class LinkedList<X> {
 
             return true;
         }
-
     }
 
+
+    // size() method will return current size of the list
     public int size() {
         return size;
     }
 
+
+    // toString method for the Linked List
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
