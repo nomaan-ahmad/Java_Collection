@@ -1,7 +1,5 @@
 package com.nomaan.dsa.linkedList;
 
-import javax.print.DocFlavor;
-
 public class LinkedList<X> {
 
     private int size;
