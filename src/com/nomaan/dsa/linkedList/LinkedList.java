@@ -70,7 +70,7 @@ public class LinkedList<X> {
 
         {
             Node<X> temp = head;
-            while (temp != null && pos-- > 0) temp = temp.next;
+            while (temp != null && --pos > 0) temp = temp.next;
 
             if (temp == null) {
                 tail.next = ele;
